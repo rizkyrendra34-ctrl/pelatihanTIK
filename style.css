@@ -1,26 +1,73 @@
-/* Styling tambahan untuk link dan tombol biar lebih keren */
-.kartu-profil a, .kartu-profil button {
-    display: block; /* Bikin link dan tombol punya baris sendiri */
-    margin: 10px auto;
-    padding: 8px 15px;
-    border-radius: 8px;
-    text-decoration: none; /* Hilangin garis bawah di link */
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Efek halus saat hover */
+/* Gaya umum halaman */
+body {
+  background-color: #2c3034;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #e2cefa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.kartu-profil a {
-    background-color: #1DA1F2; /* Warna biru biar kayak Twitter/TikTok */
-    color: white;
+/* Kartu profil */
+.kartu-profil {
+  width: 320px;
+  background: #3a3f44;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.kartu-profil button {
-    background-color: #4CAF50; /* Warna hijau biar kayak tombol OK */
-    color: white;
-    border: none;
+.kartu-profil:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
-.kartu-profil a:hover, .kartu-profil button:hover {
-    background-color: #1a8cd8; /* Warna agak gelap saat di-hover */
+/* Foto profil */
+.kartu-profil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a88bfa;
+  margin-bottom: 15px;
+}
+
+/* Teks */
+.kartu-profil h1 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.kartu-profil p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* Tombol dan link */
+.tombol-link,
+button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #a88bfa;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tombol-link:hover,
+button:hover {
+  background-color: #d3b3ff;
+  transform: scale(1.05);
 }

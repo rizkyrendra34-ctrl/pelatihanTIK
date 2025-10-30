@@ -3,5 +3,5 @@ const tombolSapa = document.getElementById('sapaButton');
 
 // Tambahkan event listener untuk klik
 tombolSapa.addEventListener('click', function() {
-  alert('Halo Narendra! Terima kasih sudah berkunjung ke portofolio saya 😊');
+  alert('Halo 3Syastroosl! Terima kasih sudah berkunjung ke portofolio saya 😊');
 });

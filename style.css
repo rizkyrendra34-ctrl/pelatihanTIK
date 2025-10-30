@@ -1,27 +1,26 @@
-body {
-    background-color: #2c3034;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
+/* Styling tambahan untuk link dan tombol biar lebih keren */
+.kartu-profil a, .kartu-profil button {
+    display: block; /* Bikin link dan tombol punya baris sendiri */
+    margin: 10px auto;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none; /* Hilangin garis bawah di link */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Efek halus saat hover */
 }
 
-/* Semua styling untuk kartu-profil digabungkan di sini */
-.kartu-profil {
-    /* Layout dan Ukuran */
-    width: 300px;
-    margin: 50px auto; /* auto ini yang bikin kartu di tengah */
-    padding: 20px;
-    
-    /* Styling Visual */
-    background-color: rgb(0, 0, 0);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Gue naikin dikit opacity biar keliatan */
-    
-    /* Alignment */
-    text-align: center; /* Dipindahkan dari blok yang terpisah */
+.kartu-profil a {
+    background-color: #1DA1F2; /* Warna biru biar kayak Twitter/TikTok */
+    color: white;
 }
 
-/* Ini selector yang benar-benar nested dan udah bagus */
-.kartu-profil img {
-    width: 150px;
-    border-radius: 50%; /* Bikin foto jadi bulet */
+.kartu-profil button {
+    background-color: #4CAF50; /* Warna hijau biar kayak tombol OK */
+    color: white;
+    border: none;
+}
+
+.kartu-profil a:hover, .kartu-profil button:hover {
+    background-color: #1a8cd8; /* Warna agak gelap saat di-hover */
 }

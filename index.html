@@ -1,31 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.3syastroosl</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="kartu-profil">
-      <img src="ler.jpg" alt="Foto Profil 3Syastroosl">
-      <h1>3Syastroosl</h1>
-      <p>
-        Saya hanya Random people yang suka code.<br>
-        Selamat datang di website testing Saya!
-      </p>
-      <a href="https://tiktok.com/@rennxrnnty" target="_blank" class="tombol-link">Kunjungi TikTok Saya</a>
-      <button id="sapaButton">Click untuk lihat!</button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pengatur Keuangan Harian</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Pengatur Keuangan Harian</h1>
+      <p class="tagline">Catat pemasukan & pengeluaran — tersimpan di browser</p>
+    </header>
 
-      <!-- Tempat munculnya kotak komentar -->
-      <div id="commentSection" class="hidden">
-        <h3>Tinggalkan Komentar</h3>
-        <textarea id="commentInput" placeholder="Tulis sesuatu di sini..."></textarea><br>
-        <button id="sendComment">Kirim</button>
-        <div id="commentList"></div>
+    <section class="summary" aria-live="polite">
+      <div class="card">
+        <h3>Saldo</h3>
+        <p id="balance">Rp 0</p>
       </div>
-    </div>
+      <div class="card">
+        <h3>Total Pemasukan</h3>
+        <p id="total-income">Rp 0</p>
+      </div>
+      <div class="card">
+        <h3>Total Pengeluaran</h3>
+        <p id="total-expense">Rp 0</p>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="controls">
+      <form id="tx-form" class="form">
+        <div class="row">
+          <label for="type">Tipe</label>
+          <select id="type" required>
+            <option value="income">Pemasukan</option>
+            <option value="expense">Pengeluaran</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="amount">Jumlah (Rp)</label>
+          <input id="amount" type="number" min="0" step="1" placeholder="Contoh: 50000" required />
+        </div>
+
+        <div class="row">
+          <label for="category">Kategori</label>
+          <input id="category" type="text" placeholder="Contoh: Gaji, Makan, Transport" />
+        </div>
+
+        <div class="row">
+          <label for="note">Catatan</label>
+          <input id="note" type="text" placeholder="Opsional" />
+        </div>
+
+        <div class="row">
+          <label for="date">Tanggal</label>
+          <input id="date" type="date" required />
+        </div>
+
+        <div class="row actions">
+          <button type="submit" id="add-btn">Tambah</button>
+          <button type="button" id="clear-form">Reset</button>
+        </div>
+      </form>
+
+      <div class="filters">
+        <label for="filter-from">Dari</label>
+        <input id="filter-from" type="date" />
+        <label for="filter-to">Sampai</label>
+        <input id="filter-to" type="date" />
+        <button id="apply-filter" type="button">Terapkan</button>
+        <button id="clear-filter" type="button">Hapus Filter</button>
+      </div>
+
+      <div class="export">
+        <button id="export-csv" type="button">Ekspor CSV</button>
+        <button id="clear-all" type="button" title="Hapus semua transaksi">Hapus Semua</button>
+      </div>
+    </section>
+
+    <section class="list">
+      <h2>Daftar Transaksi</h2>
+      <table id="tx-table" aria-label="Daftar transaksi">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Tipe</th>
+            <th>Jumlah (Rp)</th>
+            <th>Kategori</th>
+            <th>Catatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="no-data" class="muted">Belum ada transaksi.</p>
+    </section>
+
+    <footer>
+      <small>Versi sederhana • Simpan lokal di browser • Buat oleh Web Developer</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
 </html>
